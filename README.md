@@ -1,9 +1,11 @@
-# examen-sql
-Examen de sql para DBA/DBM
+# EXAMEN SQL
 
-Dicho examen debe realizarse en MYSQL, presentando por codigo la solución al problema planteado, en un archivo de nombre examenDBA.sql y enviando dicha respuesta al email info@proyectoniris.com
+Para DBA/DBM
+
+Dicho examen debe realizarse en MYSQL, presentando por codigo la solución al problema planteado, en un archivo de nombre examenDBA.sql y enviando dicha respuesta al email examen@proyectoniris.com con nombre y apellido en el asunto del mismo.
 
 Por cualquier consulta, enviar email a info@proyectoniris.com
+
 Buena suerte!
 
 Fases de la aplicacion:
