@@ -4,6 +4,8 @@ Para DBA/DBM
 
 Dicho examen debe realizarse en MYSQL, presentando por codigo la solución al problema planteado, en un archivo de nombre examenDBA.sql y enviando dicha respuesta al email examen@proyectoniris.com con nombre y apellido en el asunto del mismo.
 
+Tiene 7 días para hacer el examen desde que se realiza el fork del repositorio.
+
 Por cualquier consulta, enviar email a info@proyectoniris.com
 
 Buena suerte!
