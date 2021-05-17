@@ -44,25 +44,25 @@ Entidades:
 
 Estos son los razonamientos que se hicieron mientras se elaboraba el diagrama de los cuales se obtiene la cardinalidad de las relaciones:
 
-    En una jornada se organizan varios eventos mientras que un evento se celebra en una jornada. Eventos es una entidad débil dependiente 
-    de jornadas.
-    Un equipo participa en varios eventos como local mientras que en un evento sola hay un equipo local.
-    Un equipo participa en varios eventos como visitante mientras que en un evento sola hay un equipo visitante.
-    En una jornada se sellan varias quinielas mientras que una quiniela solo es válida para una jornada.
-    En una quiniela se realizan varios pronósticos mientras que un pronóstico pertenece a una quiniela concreta. Pronósticos es una
-    entidad débil dependiente de quinielas.
-    Sobre un evento se realizan varios pronósticos mientras que un pronóstico pertenece a un evento concreto.
+   En una jornada se organizan varios eventos mientras que un evento se celebra en una jornada. Eventos es una entidad débil dependiente 
+   de jornadas.
+   Un equipo participa en varios eventos como local mientras que en un evento sola hay un equipo local.
+   Un equipo participa en varios eventos como visitante mientras que en un evento sola hay un equipo visitante.
+   En una jornada se sellan varias quinielas mientras que una quiniela solo es válida para una jornada.
+   En una quiniela se realizan varios pronósticos mientras que un pronóstico pertenece a una quiniela concreta. Pronósticos es una
+   entidad débil dependiente de quinielas.
+   Sobre un evento se realizan varios pronósticos mientras que un pronóstico pertenece a un evento concreto.
 
-    Las entidades EVENTOS y PRONOSTICOS se han considerado débiles. Por lo tanto la clave primaria de estas entidades será compuesta 
-    interviniendo en ella la clave foránea de la entidad fuerte de la que dependen. EVENTOS depende de JORNADAS, y PRONOSTICOS depende
-    de QUINIELAS.
+   Las entidades EVENTOS y PRONOSTICOS se han considerado débiles. Por lo tanto la clave primaria de estas entidades será compuesta 
+   interviniendo en ella la clave foránea de la entidad fuerte de la que dependen. EVENTOS depende de JORNADAS, y PRONOSTICOS depende
+   de QUINIELAS.
 
 Atributos de cada entidad
 
-    Este apartado se debería integrar en el modelo entidad-relación, en su lugar lo haremos aparte con la intención de no cargar el 
-    diagrama, de modo que el modelo presentado con anterioridad es un modelo simplificado. En la primera columna de la siguiente 
-    propuesta de atributos se especifica el nombre del atributo, en la segunda el tipo de dato, en la tercera si puede ser o no nulo, y 
-    en la cuarta columna, si se tercia, si es clave primaria, foránea, o los posibles valores si es un campo codificado.
+   Este apartado se debería integrar en el modelo entidad-relación, en su lugar lo haremos aparte con la intención de no cargar el 
+   diagrama, de modo que el modelo presentado con anterioridad es un modelo simplificado. En la primera columna de la siguiente 
+   propuesta de atributos se especifica el nombre del atributo, en la segunda el tipo de dato, en la tercera si puede ser o no nulo, y 
+   en la cuarta columna, si se tercia, si es clave primaria, foránea, o los posibles valores si es un campo codificado.
 
 EQUIPOS:
 
@@ -93,8 +93,7 @@ QUINIELAS:
     ACIERTOS      numerico      nulo
 
 PRONOSTICOS:
-
-    
+ 
     ID_QUINIELA   numérico      no nulo     clave primaria
     ID_PRO        numérico      no nulo     clave primaria
     ID_JORNADA    numérico      no nulo     clave foránea de la entidad EVENTOS junto con ID_EVENTO
@@ -103,18 +102,19 @@ PRONOSTICOS:
 
 Inserción de registros en las tablas:
 
-    Para alimentar la BD lo habitual es disponer de alguna pantalla, o interface de usuario, donde mediante un formulario 
-    permita realizar las inserciones. Como esto queda fuera del alcance de este examen, los registros se han creado directamente 
-    con instrucciones de inserción directamente sobre la BD, aunque lo habitual hubiese sido que un usuario insertara los datos 
-    desde los formularios de entrada de datos y mantenimiento de la aplicación.
+   Para alimentar la BD lo habitual es disponer de alguna pantalla, o interface de usuario, donde mediante un formulario 
+   permita realizar las inserciones. Como esto queda fuera del alcance de este examen, los registros se han creado directamente 
+   con instrucciones de inserción directamente sobre la BD, aunque lo habitual hubiese sido que un usuario insertara los datos 
+   desde los formularios de entrada de datos y mantenimiento de la aplicación.
 
-    Para simplificar vamos a suponer que en la competetición participan solo seis equipos y, por tanto, se celebrarán diez 
-    jornadas de Liga, cinco la primera vuelta y cinco más la segunda, con un total de tres eventos por jornada. Supondremos 
-    también que la competición se encuentra en momento tal que la jornada 8 todavía no se ha disputado, es decir, se han disputado 
-    ya 7 jornadas, por lo que en los registros de las tabla JORNADAS referentes a las jornadas 8, 9 y 10 el campo DISPUTADA 
-    contendrá una "N" y los registros de la tabla eventos referentes a las mismas jornadas el campo RESULTADO estará a nulo.
+   Para simplificar vamos a suponer que en la competetición participan solo seis equipos y, por tanto, se celebrarán diez 
+   jornadas de Liga, cinco la primera vuelta y cinco más la segunda, con un total de tres eventos por jornada. Supondremos 
+   también que la competición se encuentra en momento tal que la jornada 8 todavía no se ha disputado, es decir, se han disputado 
+   ya 7 jornadas, por lo que en los registros de las tabla JORNADAS referentes a las jornadas 8, 9 y 10 el campo DISPUTADA 
+   contendrá una "N" y los registros de la tabla eventos referentes a las mismas jornadas el campo RESULTADO estará a nulo.
 
 Inserciones en la tabla EQUIPOS:
+
     (ID_EQUIPO, EQUIPO):
         (1, 'Las Palmas');
         (2, 'Xerez');
@@ -138,6 +138,7 @@ Inserciones en la tabla JORNADAS:
         (10, 'Jornada 10', '2010-04-18', 'N');
 
 Inserciones en la tabla EVENTOS:
+    
     (ID_JORNADA, ID_EVENTO, LOCAL, VISITANTE, RESULTADO):
         (1, 1, 5, 1, '1');
         (1, 2, 2, 3, '1');
@@ -171,6 +172,7 @@ Inserciones en la tabla EVENTOS:
         (10, 3, 2, 5, NULL);
 
 Inserciones en la tabla QUINIELAS:
+    
     (ID_QUINIELA, ID_JORNADA, NOMBRE, ESCRUTADA, ACIERTOS):
         (1, 1, 'Quini 1.1', 'S', 0);
         (2, 1, 'Quini 1.2', 'S', 1);
@@ -195,6 +197,7 @@ Inserciones en la tabla QUINIELAS:
         (21, 8, 'Quini 8.2', 'N', NULL);
 
 Inserciones en la tabla PRONOSTICOS:
+    
     (ID_QUINIELA, ID_PRO, ID_JORNADA, ID_EVENTO, PRONOSTICO):
         (1, 1, 1, 1, 'X');
         (1, 2, 1, 2, 'X');
@@ -219,24 +222,26 @@ Inserciones en la tabla PRONOSTICOS:
         (7, 3, 3, 3, '2');
 
 Informes o explotación de datos
-    Al igual que para las inserciones, lo más normal de una aplicación es que disponga de alguna funcionalidad en las pantallas de gestión 
-    que permita obtener informes. Esto también esta fuera del ámbito de este curso, así que lo haremos con consultas SQL directamente sobre 
-    la BD.
+    
+   Al igual que para las inserciones, lo más normal de una aplicación es que disponga de alguna funcionalidad en las pantallas de gestión 
+   que permita obtener informes. Esto también esta fuera del ámbito de este curso, así que lo haremos con consultas SQL directamente sobre 
+   la BD.
 
-    Usted debería estar capacitado para desarrollar esta parte de la aplicación, puesto que es lo que se ha estado trabajando durante todo 
-    el curso. No voy a quitarle el protagonismo que merece y dejaré que ponga en práctica lo aprendido. Los informes o consultas a 
-    desarrollar las encontrará a continuación, en el apartado de ejercicios. En esta lección, por ser la última, no se han publicado 
-    las soluciones, aunque si los resultados de las consultas que se piden en los ejercicios para que puedan ser contrastados con los 
-    resultados que usted obtenga.
+   Usted debería estar capacitado para desarrollar esta parte de la aplicación, puesto que es lo que se ha estado trabajando durante todo 
+   el curso. No voy a quitarle el protagonismo que merece y dejaré que ponga en práctica lo aprendido. Los informes o consultas a 
+   desarrollar las encontrará a continuación, en el apartado de ejercicios. En esta lección, por ser la última, no se han publicado 
+   las soluciones, aunque si los resultados de las consultas que se piden en los ejercicios para que puedan ser contrastados con los 
+   resultados que usted obtenga.
 
-    Sin embargo hay una cuestión que por la naturaleza de esta aplicación de ejemplo es preferible introducir. En los ejercicios se 
-    le pedirá un tipo de consultas que requiere que aparezca dos veces la tabla EQUIPOS en la cláusula FROM. Esto es debido a que en 
-    todo evento participan dos equipos, el local y el visitante. El modo de poder usar la misma tabla por duplicado en la cláusula from 
-    es mediante alias de tabla, con ello se romper la ambigüedad del mismo modo que se hace con los campos de igual nombre pero de 
-    tablas distintas. Veamos esto con un ejemplo:
+   Sin embargo hay una cuestión que por la naturaleza de esta aplicación de ejemplo es preferible introducir. En los ejercicios se 
+   le pedirá un tipo de consultas que requiere que aparezca dos veces la tabla EQUIPOS en la cláusula FROM. Esto es debido a que en 
+   todo evento participan dos equipos, el local y el visitante. El modo de poder usar la misma tabla por duplicado en la cláusula from 
+   es mediante alias de tabla, con ello se romper la ambigüedad del mismo modo que se hace con los campos de igual nombre pero de 
+   tablas distintas. Veamos esto con un ejemplo:
 
-    ¿Que calendario tiene en la competición el Xerez, equipo de identificador 2?:
-        select J.ID_JORNADA,date_format(J.FECHA,'%d-%m-%Y') FECHA, L.EQUIPO LOCAL , V.EQUIPO  VISITANTE
+   ¿Que calendario tiene en la competición el Xerez, equipo de identificador 2?:
+   
+    select J.ID_JORNADA,date_format(J.FECHA,'%d-%m-%Y') FECHA, L.EQUIPO LOCAL , V.EQUIPO  VISITANTE
         from JORNADAS J, EVENTOS E, EQUIPOS L, EQUIPOS V
         where J.ID_JORNADA  = E.ID_JORNADA
             and E.LOCAL       = L.ID_EQUIPO
@@ -256,14 +261,15 @@ Ejercicio 3.1
     Nota: Deberá usar la función IF para calcular la columna ACIERTO.
 
 Ejercicio 3.2
-    Tomando como patrón la consulta resultante del ejercicio 3.1, desarrolle una consulta que calcule los aciertos de las quinielas, 
-    es decir, escrute las quinielas. Agrupe los datos por quiniela. Si una quiniela no tiene ningún acierto no es necesario que 
-    aparezca en la lista resultante. 
+    
+   Tomando como patrón la consulta resultante del ejercicio 3.1, desarrolle una consulta que calcule los aciertos de las quinielas, 
+   es decir, escrute las quinielas. Agrupe los datos por quiniela. Si una quiniela no tiene ningún acierto no es necesario que 
+   aparezca en la lista resultante. 
 
-    Añadale un filtro para poder calcular los aciertos de una quiniela concreta. Este dato es especialmente 
-    útil para que un usuario, o un proceso automático, pueda actualizar el campo ACIERTOS de la tabla QUINIELAS, 
-    que contiene un valor nulo hasta que se conocela la combinación ganadora y, en consecuencia, el dato a atualizar 
-    una vez escrutada la quiniela. 
+   Añadale un filtro para poder calcular los aciertos de una quiniela concreta. Este dato es especialmente 
+   útil para que un usuario, o un proceso automático, pueda actualizar el campo ACIERTOS de la tabla QUINIELAS, 
+   que contiene un valor nulo hasta que se conocela la combinación ganadora y, en consecuencia, el dato a atualizar 
+   una vez escrutada la quiniela. 
 
 Ejercicio 3.3
     Desarrolle una consulta que calcule los aciertos de las quinielas pero esta vez considerando las quinielas que no presentan ningún acierto.
