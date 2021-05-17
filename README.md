@@ -28,10 +28,10 @@ Requerimientos
 
 Análisis:
 
-    Dadas estas especificaciones debemos conocer esencialmente como funcionan las quinielas futbolísticas. En el mundo del fútbol 
-    podemos afirmar que se convocan jornadas en las que se organizan eventos, en estos eventos participan equipos, y sobre estos 
-    eventos se pronostican resultados a 1,X, 2. El conjunto de pronósticos sobre los eventos de una misma jornada es lo que se llama 
-    quiniela. Y el conjunto de resultados de los eventos de una misma jornada es lo que se llama combinación ganadora.
+   Dadas estas especificaciones debemos conocer esencialmente como funcionan las quinielas futbolísticas. En el mundo del fútbol 
+   podemos afirmar que se convocan jornadas en las que se organizan eventos, en estos eventos participan equipos, y sobre estos 
+   eventos se pronostican resultados a 1,X, 2. El conjunto de pronósticos sobre los eventos de una misma jornada es lo que se llama 
+   quiniela. Y el conjunto de resultados de los eventos de una misma jornada es lo que se llama combinación ganadora.
 
 Entidades:
 
