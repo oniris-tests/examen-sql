@@ -98,8 +98,8 @@ PRONOSTICOS:
  
     ID_QUINIELA   numérico      no nulo     clave primaria
     ID_PRO        numérico      no nulo     clave primaria
-    ID_JORNADA    numérico      no nulo     clave foránea de la entidad EVENTOS junto con ID_EVENTO
-    ID_EVENTO     numérico      no nulo     clave foránea de la entidad EVENTOS junto con ID_JORNADA
+    ID_JORNADA    numérico      no nulo     clave foránea de la entidad EVENTOS junto con ID_JORNADA
+    ID_EVENTO     numérico      no nulo     clave foránea de la entidad EVENTOS junto con ID_EVENTO
     PRONOSTICO    cadena(1)     no nulo     posibles valores: ('1' , 'X' , '2')
 
 Inserción de registros en las tablas:
